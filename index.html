@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://i.ibb.co/7Swz3kp/icons8-orange-94.png">
+
+    <title>Open org</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="./custom.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a href="#" class="home-link">
+                    <img src="https://i.ibb.co/7yx8pgb/openorgmenulogo.png" class="menu-logo" id="logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+                    <form class="form-inline mt-2 mt-md-0">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link home-link" href="https://open-range-org.github.io">Home</a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <main role="main" id="main">
+        <div class="top-banner">
+            <div class="content" style="background-image: url('https://i.ibb.co/hmTmJXK/hand-drawn-people-with-hot-drinks-52683-71948.jpg');">
+                <div class="banner-text">
+                    <h1 class="mb-3"> <i class="fab fa-osi"></i> Open Range Org</h1>
+                    <p>Open-source software is computer software that is released under a license in which the copyright
+                        holder
+                        grants users the rights to use, study, change, and distribute the software and its source code
+                        to anyone and
+                        for any purpose. Open-source software may be developed in a collaborative, public manner.</p>
+                    <div class="banner-icon">
+                        <a href="https://github.com/Open-range-org" class="theme-green" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                        <a href="mailto:openrangeorg@gmail.com" class="theme-green"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="col--sm-10 offset-sm-1 p-5 my-5">
+            <div class="col-md-4">
+                <h1 class="mb-5">Googly.js form demo</h1>
+                <form valid="yes">
+
+                    <input type="text" placeholder="Enter Firstname" id="fname" class="form-control" />
+                    <valid type="require" for="fname" msg="Please insert Id number" class="text-danger"></valid>
+                    <valid type="expression" for="fname" mode="char" msg="Only characters are allowed"
+                        class="text-danger"> </valid><br />
+
+
+                    <input type="text" placeholder="Enter Id Number" id="idnum" class="form-control" />
+                    <valid type="require" for="idnum" msg="Please insert Id number" class="text-danger"></valid>
+                    <valid type="expression" for="idnum" mode="num" msg="Only numbers are allowed" class="text-danger">
+                    </valid><br />
+
+                    <input type="password" placeholder="Enter Pass" id="pass" class="form-control" />
+                    <valid type="require" for="pass" msg="Please insert Password" class="text-danger"></valid>
+                    <valid type="expression" for="pass" mode="pass" msg="Only Number and Characters are allowed"
+                        class="text-danger"> </valid>
+                    <strength for="pass"></strength>
+                    <br />
+
+                    <input type="password" placeholder="Confirm Pass" id="confpass" class="form-control" />
+                    <valid type="require" for="confpass" class="text-danger"></valid>
+                    <valid type="expression" for="confpass" mode="pass" msg="Only Charecters and _ Allowed"
+                        class="text-danger"> </valid>
+                    <valid type="compare" for="confpass" with="pass"></valid><br />
+
+                    <input type="text" placeholder="Enter Email" id="email" class="form-control" />
+                    <valid type="require" for="email" msg="Please insert Email" class="text-danger"></valid>
+                    <valid type="expression" for="email" mode="mail" msg="Enter Valid Email" class="text-danger">
+                    </valid><br />
+
+                    <textarea class="form-control" rows="10" cols="30" maxlength="250" data-validation="remain"
+                        id="textarea"></textarea>
+                    <valid type="remain" for="textarea" class="text-info"></valid><br/><br/>
+                    <input type="button" value="Continue" class="btn btn-info" id="submit" />
+
+                </form>
+            </div>
+        </div>
+    </main>
+    <div id="footer" class="col-md-12">
+        <footer class="col-md-12">
+            <div class="float-right">
+                <a href="https://github.com/Open-range-org" class="theme-green" target="_blank"><i
+                        class="fab fa-github"></i></a>
+                <a href="mailto:openrangeorg@gmail.com" class="theme-green"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>©2024 Open Range Org | <a href="#" class="theme-green">Privacy</a> | <a href="#"
+                    class="theme-green">Terms</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="./dist/googly.min.js"></script>
+
+</body>
+
+</html>
