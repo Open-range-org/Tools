@@ -1,0 +1,10 @@
+.action-event{
+  margin: 0px 5px;
+}
+.action-event:hover{
+  cursor: pointer;
+}
+.page-header{
+  background-color: #ebebeb;
+  display: table;
+}
