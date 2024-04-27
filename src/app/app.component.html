@@ -1,0 +1,35 @@
+
+
+  <div id="header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a href="#" class="home-link"><img src="https://open-range-org.github.io/images/openorglogo.png" class="menu-logo" id="logo"/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          </ul>
+          <form class="d-flex">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div> <!--  Dynamic header Div  -->
+
+  <main role="main" id="main">
+    <div class="col-md-12 content-body">
+
+      <router-outlet></router-outlet>
+    </div>
+    <div id="footer">
+      <footer class="col-md-12 px-5">
+        <div class="float-end">
+          ©2024 test | <a href="#" class="theme-green">Privacy</a> | <a href="#" class="theme-green">Terms</a>
+        </div>
+
+      </footer>
+    </div><!--  Dynamic footer Div  -->
+
+  </main>

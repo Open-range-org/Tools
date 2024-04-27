@@ -1,0 +1,52 @@
+#body{
+  font-family: 'Exo 2', sans-serif;
+  background-color: #111;
+  width: 100vw;
+  height: 100vh;
+
+}
+.theme-green{
+  color: #229977;
+}
+.theme-blue{
+  color: #227799;
+}
+body{
+  margin: 0px;
+  color: #000;
+}
+.menu-logo{
+  height: 35px;
+  margin-left: 20px;
+}
+.content-body{
+  min-height: 750px;
+}
+.top-background{
+  width: 100%;
+}
+.projects{
+  padding-top: 25px;
+}
+.projects-card-block{
+  text-align: center;
+  margin-top: 30px;
+}
+#footer{
+  margin-top: 20px;
+
+}
+body{
+  overflow-x: hidden;
+}
+
+.page-header{
+  padding: 10px 25px;
+}
+.page-Content{
+  padding: 10px 25px;
+  margin-top: 30px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
