@@ -1,0 +1,101 @@
+<div class="page-header col-md-12 p-4" id="page-header">
+  <div class="float-start col-2 text-center"><img class="card-projects-logo" src="../../assets/icons/data-science.png"
+      width="140" height="140"></div>
+  <div class="details px-5 py-2 float-start col-8">
+    <h1>Calculate mean median mode</h1>
+    Mean, median, and mode are the three measures of central tendency in statistics. We identify the central position
+    of any data set while describing a set of data. This is known as the measure of central tendency.
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="page-Content col-md-12">
+  <div class="col-4 float-start">
+    <label>This tool support csv files . Please don't use excel files .</label>
+    <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">
+    <div class="action mt-2 float-end">
+      <button class="btn btn-sm btn-primary" (click)="loadData()">Load csv</button>
+    </div>
+    <div class="clearfix"></div>
+    <div class="metadata">
+      <ng-container *ngIf="csvJsonAndMetaData && !isLoading">
+        <table class="table table-bordered mt-4">
+          <thead class="thead-light">
+            <tr>
+              <th>Column Name</th>
+              <th>Data type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let column of csvJsonAndMetaData.Data.Headers;index as i">
+              <td>{{column}}</td>
+              <td>{{csvJsonAndMetaData.Metadata[column].Type}}</td>
+              <td>
+                <ng-container *ngIf="csvJsonAndMetaData.Metadata[column].Type == 'Number' || csvJsonAndMetaData.Metadata[column].Type == 'Float'">
+                <span class="action-event theme-blue"><i class="fas fa-solid fa-pen-to-square"></i></span>
+                <span class="action-event theme-blue"  data-bs-toggle="modal" data-bs-target="#chartModal" (click)="calculateMMM(column)"><i class="fas fa-solid fa-chart-pie"></i></span>
+                </ng-container>
+                <!-- Button trigger modal -->
+                <ng-container *ngIf="csvJsonAndMetaData.Metadata[column].Type != 'Number' && csvJsonAndMetaData.Metadata[column].Type != 'Float'">
+                  <span class="text-info"> No Action</span>
+                  </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </div>
+  </div>
+  <div class="col-8 float-start px-5 mb-5">
+    <ng-container *ngIf="isLoading">
+    <div class="col-12 text-center">
+      <img src="../../assets/loader.gif" style="width: 80%;"/>
+    </div>
+    </ng-container>
+    <ng-container *ngIf="(DataSource && csvJsonAndMetaData)  && !isLoading">
+      <table mat-table  [dataSource]="DataSource" matSort class="table table-bordered">
+        <ng-container *ngFor="let column of csvJsonAndMetaData.Data.Headers" [matColumnDef]="column">
+            <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+            <td mat-cell *matCellDef="let object">{{object[column]}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="csvJsonAndMetaData.Data.Headers"></tr>
+        <tr mat-row *matRowDef="let row , columns: csvJsonAndMetaData.Data.Headers;"></tr>
+
+      </table>
+      <mat-paginator [pageSizeOptions]="[20,50,100]" [showFirstLastButtons]="true"></mat-paginator>
+
+    </ng-container>
+  </div>
+</div>
+
+
+<!-- Chart Modal -->
+<div class="modal fade" id="chartModal" tabindex="-1" aria-labelledby="chartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="chartModalLabel">Details of column : {{selectedColumn}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-3">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>Mean value </td> <td>{{meanValue}}</td>
+            </tr>
+            <tr>
+              <td>Median value </td> <td>{{medianValue}}</td>
+            </tr>
+            <tr>
+              <td>More value </td> <td>{{moreValue}} <span class="badge bg-secondary rounded-pill">{{moreCount}} times</span></td>
+            </tr>
+            <tr>
+              <td>Is Unique </td> <td>{{isUnique}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
